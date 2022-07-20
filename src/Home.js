@@ -1,11 +1,5 @@
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-const userDB = {
-  dbUsername: "testid",
-  dbPw: "testpw",
-};
 
 const HomeWrap = styled.div`
   height: 100vh;
@@ -36,16 +30,30 @@ const HomeTitle = styled.p`
 const Boxwrap = styled.div`
   width: 100%;
   display: flex;
+  justify-content: center;
 `;
 
 const LoginBox = styled.button`
-  width: 100px;
-  height: 30px;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  background-color: #ed2553;
+  border: none;
+  margin-right: 30px;
+  cursor: pointer;
 `;
 
 const SignBox = styled.button`
-  width: 100px;
-  height: 30px;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  background-color: #ed2553;
+  border: none;
+  cursor: pointer;
 `;
 
 export const Home = () => {
@@ -56,8 +64,12 @@ export const Home = () => {
           <p>환영합니다!</p>
         </HomeTitle>
         <Boxwrap>
-          <LoginBox>로그인</LoginBox>
-          <SignBox>회원가입</SignBox>
+          <Link to={"/Login"}>
+            <LoginBox>로그인</LoginBox>
+          </Link>
+          <Link to={"/Sign"}>
+            <SignBox>회원가입</SignBox>
+          </Link>
         </Boxwrap>
       </HomeBox>
     </HomeWrap>
