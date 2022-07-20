@@ -51,7 +51,7 @@ const LoginBar = styled.div`
   left: 0;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   margin-top: 50px;
   width: 100%;
   height: 50px;
@@ -64,7 +64,8 @@ const Button = styled.div`
   font-size: 20px;
   font-weight: 700;
   cursor: ${(props) => props.cur};
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.bgcolor};
+  transition: 0.7;
 `;
 
 const Signin = styled.p`
@@ -84,19 +85,35 @@ const Signin = styled.p`
   }
 `;
 
-const ErrorMessage = styled.p``;
+const ErrorMessage = styled.p`
+  font-weight: 700;
+  color: #ed2553;
+  margin-bottom: 15px;
+  padding-left: 15px;
+`;
 
 export const Login = () => {
   const {
     register,
     handleSubmit,
     getlValues,
+    setError,
     formState: { errors, isValid },
-  } = useForm();
+  } = useForm({
+    mode: "onChange",
+  });
 
   const onSubmit = () => {
     const { username, password } = getlValues();
     const { dbUsername, dbPw } = exDB;
+    console.log(dbUsername, dbPw);
+
+    if (username !== dbUsername) {
+      setError("usernameResult", { message: "아이디가 틀렸습니다" });
+    }
+    if (password !== dbPw) {
+      setError("userpwResult", { message: "비밀번호가 틀렸습니다." });
+    }
   };
 
   return (
@@ -117,7 +134,8 @@ export const Login = () => {
             })}
             type="text"
             placeholder="아이디를 입력해주세요."
-          ></input>
+          />
+
           {errors?.username?.message && (
             <ErrorMessage>{errors?.username?.message}</ErrorMessage>
           )}
@@ -136,19 +154,19 @@ export const Login = () => {
             })}
             type="password"
             placeholder="패스워드를 입력해주세요."
-          ></input>
+          />
 
           {errors?.password?.message && (
             <ErrorMessage>{errors?.password?.message}</ErrorMessage>
           )}
 
-          {errors?.passwordResult?.message && (
-            <ErrorMessage>{errors?.passwordResult?.message}</ErrorMessage>
+          {errors?.userpwResult?.message && (
+            <ErrorMessage>{errors?.userpwResult?.message}</ErrorMessage>
           )}
           <Button
             cur={isValid ? "pointer" : "auto"}
-            bgcolor={isValid ? "white" : "#ed2553"}
-            fontcolor={isValid ? "#ed2553" : "white"}
+            bgcolor={isValid ? "#ed2553" : "white"}
+            fontcolor={isValid ? "white" : "#ed2553"}
           >
             로그인
           </Button>
