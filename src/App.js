@@ -1,5 +1,7 @@
+import { Login } from "./Login";
+
 function App() {
-  return <div>로그인폼</div>;
+  return <Login />;
 }
 
 export default App;
