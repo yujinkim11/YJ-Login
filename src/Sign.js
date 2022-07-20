@@ -87,8 +87,8 @@ export const Sign = () => {
             <input type="password" />
             <input type="password" />
             <input type="text" />
-            <input type="text" />
-            <input type="text" />
+            <input type="email" />
+            <input type="tel" />
           </form>
         </FormWrap>
         <Button>회원가입</Button>
