@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
-const exDB = {
-  dbUsername: "test12",
-  dbPw: "pass1234",
+const userDB = {
+  dbUsername: "testid",
+  dbPw: "testpw123!",
 };
 
 const LoginAllWrap = styled.div`
@@ -40,15 +40,7 @@ const LoginTitle = styled.p`
   color: #ed2553;
   font-weight: 700;
   margin-bottom: 50px;
-  display: flex;
-`;
-
-const LoginBar = styled.div`
-  width: 5px;
-  height: 30px;
-  background-color: #ed2553;
-  position: absolute;
-  left: 0;
+  padding-left: 10px;
 `;
 
 const Button = styled.button`
@@ -96,7 +88,7 @@ export const Login = () => {
   const {
     register,
     handleSubmit,
-    getlValues,
+    getValues,
     setError,
     formState: { errors, isValid },
   } = useForm({
@@ -104,15 +96,16 @@ export const Login = () => {
   });
 
   const onSubmit = () => {
-    const { username, password } = getlValues();
-    const { dbUsername, dbPw } = exDB;
-    console.log(dbUsername, dbPw);
+    const { username, password } = getValues();
+    const { dbUsername, dbPw } = userDB;
+    console.log(getValues());
 
     if (username !== dbUsername) {
-      setError("usernameResult", { message: "아이디가 틀렸습니다" });
+      setError("usernameResult", { message: "아이디를 다시 확인해주세요." });
     }
+
     if (password !== dbPw) {
-      setError("userpwResult", { message: "비밀번호가 틀렸습니다." });
+      setError("userpwResult", { message: "비밀번호를 다시 확인해주세요." });
     }
   };
 
@@ -120,7 +113,6 @@ export const Login = () => {
     <LoginAllWrap>
       <LoginBox>
         <LoginTitle>
-          <LoginBar />
           <p>LOGIN</p>
         </LoginTitle>
         <form onSubmit={handleSubmit(onSubmit)}>
