@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const userDB = {
   dbUsername: "testid",
-  dbPw: "testpw123!",
+  dbPw: "testpw",
 };
 
 const LoginAllWrap = styled.div`
@@ -85,11 +86,13 @@ const ErrorMessage = styled.p`
 `;
 
 export const Login = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     getValues,
     setError,
+    clearErrors,
     formState: { errors, isValid },
   } = useForm({
     mode: "onChange",
@@ -107,8 +110,12 @@ export const Login = () => {
     if (password !== dbPw) {
       setError("userpwResult", { message: "비밀번호를 다시 확인해주세요." });
     }
-  };
 
+    if (username === dbUsername && password === dbPw) {
+      navigate("/home");
+    }
+  };
+  console.log(errors);
   return (
     <LoginAllWrap>
       <LoginBox>
@@ -122,6 +129,9 @@ export const Login = () => {
               minLength: {
                 value: 4,
                 message: "ID는 4자리 이상 필수입니다.",
+              },
+              onChange() {
+                clearErrors("usernameResult");
               },
             })}
             type="text"
@@ -142,6 +152,9 @@ export const Login = () => {
               minLength: {
                 value: 6,
                 message: "PW는 6자리 이상 필수입니다",
+              },
+              onChange() {
+                clearErrors("userpwResult");
               },
             })}
             type="password"
