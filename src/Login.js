@@ -19,9 +19,20 @@ const LeftBox = styled.div`
   height: 60vh;
   background: linear-gradient(to bottom, #2f80ed, #56ccf2);
   border-radius: 20px 0 0 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h3 {
-    font-size: 35px;
-    color: white;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 50px 0;
   }
 `;
 
@@ -45,6 +56,28 @@ const LoginBox = styled.div`
     border-bottom: 1px solid #dbdbdb;
     padding: 10px 18px;
     margin-bottom: 30px;
+  }
+`;
+
+const SignupBox = styled.div`
+  width: 250px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+  }
+  :hover {
+    cursor: pointer;
+    border: 2px solid #267dff;
   }
 `;
 
@@ -140,7 +173,16 @@ export const Login = () => {
     <LoginAllWrap>
       <LeftBox>
         <h3>Welcome Back !</h3>
-        <p>To Keep Connected with us please login with your personal info.</p>
+        <p>
+          To Keep Connected with us please
+          <br />
+          login with your personal info.
+        </p>
+        <Link to="/Sign">
+          <SignupBox>
+            <p>회원가입하기</p>
+          </SignupBox>
+        </Link>
       </LeftBox>
       <LoginBox>
         <LoginTitle>
