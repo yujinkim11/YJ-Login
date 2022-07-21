@@ -8,9 +8,23 @@ const HomeWrap = styled.div`
   align-items: center;
 `;
 
-const HomeBox = styled.div`
-  max-width: 500px;
+const HomeBg = styled.div`
   width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LeftBox = styled.div`
+  width: 25%;
+  height: 60%;
+  background-color: #267dff;
+`;
+
+const HomeBox = styled.div`
+  width: 25%;
+  height: 60%;
   background-color: white;
   padding: 80px 20px;
   display: flex;
@@ -18,11 +32,12 @@ const HomeBox = styled.div`
   position: relative;
   align-items: center;
   color: #707070;
+  z-index: 1;
 `;
 
 const HomeTitle = styled.p`
   font-size: 30px;
-  color: #ed2553;
+  color: #1d1d1d;
   font-weight: 700;
   margin-bottom: 50px;
   padding-left: 10px;
@@ -30,28 +45,30 @@ const HomeTitle = styled.p`
 const Boxwrap = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 const LoginBox = styled.button`
-  width: 200px;
+  width: 300px;
   height: 40px;
   font-size: 20px;
   font-weight: 300;
   color: white;
-  background-color: #ed2553;
+  background-color: #267dff;
   border: none;
-  margin-right: 30px;
   cursor: pointer;
+  margin-bottom: 20px;
 `;
 
 const SignBox = styled.button`
-  width: 200px;
+  width: 300px;
   height: 40px;
   font-size: 20px;
   font-weight: 300;
   color: white;
-  background-color: #ed2553;
+  background-color: #267dff;
   border: none;
   cursor: pointer;
 `;
@@ -59,19 +76,26 @@ const SignBox = styled.button`
 export const Home = () => {
   return (
     <HomeWrap>
-      <HomeBox>
-        <HomeTitle>
-          <p>환영합니다!</p>
-        </HomeTitle>
-        <Boxwrap>
-          <Link to={"/Login"}>
-            <LoginBox>로그인</LoginBox>
-          </Link>
-          <Link to={"/Sign"}>
-            <SignBox>회원가입</SignBox>
-          </Link>
-        </Boxwrap>
-      </HomeBox>
+      <HomeBg
+        style={{
+          background: `url(https://static.vecteezy.com/system/resources/thumbnails/003/475/201/small/grey-abstract-background-free-vector.jpg) no-repeat center / cover`,
+        }}
+      >
+        <LeftBox></LeftBox>
+        <HomeBox>
+          <HomeTitle>
+            <p>계정이 있으신가요?</p>
+          </HomeTitle>
+          <Boxwrap>
+            <Link to={"/Login"}>
+              <LoginBox>로그인</LoginBox>
+            </Link>
+            <Link to={"/Sign"}>
+              <SignBox>회원가입</SignBox>
+            </Link>
+          </Boxwrap>
+        </HomeBox>
+      </HomeBg>
     </HomeWrap>
   );
 };

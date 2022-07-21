@@ -7,6 +7,10 @@ export const GlobalStyled = createGlobalStyle`
 
     body{
         background-color:#D4D4D4;
+        font-family: 'Noto Sans KR', sans-serif;
+        a {
+    text-decoration: none;
+  }
     }
 
 `;

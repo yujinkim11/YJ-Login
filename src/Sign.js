@@ -11,9 +11,8 @@ const SigninAllWrap = styled.div`
 
 const SigninTitle = styled.p`
   font-size: 30px;
-  color: #ed2553;
+  color: #267dff;
   font-weight: 700;
-
   margin-bottom: 50px;
   padding-left: 10px;
 `;
@@ -21,6 +20,7 @@ const SigninTitle = styled.p`
 const SigninBox = styled.div`
   max-width: 500px;
   width: 100%;
+  height: 90%;
   background-color: white;
   padding: 80px 20px;
   display: flex;
@@ -43,7 +43,7 @@ const FormWrap = styled.div`
   display: flex;
   p {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
   }
 `;
 
@@ -51,7 +51,7 @@ const Button = styled.button`
   margin-top: 50px;
   width: 100%;
   height: 50px;
-  border: 2px solid #ed2553;
+  border: 2px solid #267dff;
   color: ${(props) => props.fontcolor};
   display: flex;
   justify-content: center;
@@ -65,10 +65,10 @@ const Button = styled.button`
 `;
 
 const ErrorMessage = styled.div`
-  color: #ed2553;
+  color: #267dff;
   margin: -20px 0 20px 15px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 const Log = styled.div`
@@ -81,7 +81,7 @@ const Log = styled.div`
   }
   span {
     margin-left: 7px;
-    color: #ed2553;
+    color: #267dff;
     :hover {
       font-weight: 700;
       cursor: pointer;
@@ -200,7 +200,6 @@ export const Sign = () => {
             <p>이메일</p>{" "}
             <input
               type="email"
-              placeholder="yjlogin@mail.com"
               {...register("useremail", {
                 required: true,
                 minLength: {
@@ -208,7 +207,6 @@ export const Sign = () => {
                 },
                 pattern: {
                   value: /^[a-z0-9\.\-_]+@([a-z0-9\-]+\.)+[a-z]{2,6}$/,
-                  message: "올바르지 않은 이메일 형식입니다.",
                 },
               })}
             />
@@ -218,7 +216,6 @@ export const Sign = () => {
             <p>연락처</p>
             <input
               type="tel"
-              placeholder="010-1234-5678"
               {...register("usertell", {
                 required: true,
                 minLength: {
@@ -235,8 +232,8 @@ export const Sign = () => {
             )}
             <Button
               cur={isValid ? "pointer" : "auto"}
-              bgcolor={isValid ? "#ed2553" : "white"}
-              fontcolor={isValid ? "white" : "#ed2553"}
+              bgcolor={isValid ? "#267dff" : "white"}
+              fontcolor={isValid ? "white" : "#267dff"}
             >
               회원가입
             </Button>

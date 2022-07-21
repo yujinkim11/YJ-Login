@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Home";
 import { Login } from "./Login";
+import { LoginAfter } from "./LoginAfter";
 import { Sign } from "./Sign";
 import { GlobalStyled } from "./styles/GlobalStyled";
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/sign" element={<Sign />} />
+        <Route path="/loginafter" element={<LoginAfter />} />
       </Routes>
     </Router>
   );

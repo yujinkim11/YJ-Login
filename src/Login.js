@@ -38,7 +38,7 @@ const LoginBox = styled.div`
 
 const LoginTitle = styled.p`
   font-size: 30px;
-  color: #ed2553;
+  color: #267dff;
   font-weight: 700;
   margin-bottom: 50px;
   padding-left: 10px;
@@ -48,7 +48,7 @@ const Button = styled.button`
   margin-top: 50px;
   width: 100%;
   height: 50px;
-  border: 2px solid #ed2553;
+  border: 2px solid #267dff;
   color: ${(props) => props.fontcolor};
   display: flex;
   justify-content: center;
@@ -73,7 +73,7 @@ const Signin = styled.p`
     color: #707070;
     :hover {
       font-weight: 700;
-      color: #ed2553;
+      color: #267dff;
     }
   }
   p {
@@ -87,8 +87,8 @@ const Signin = styled.p`
 `;
 
 const ErrorMessage = styled.p`
-  font-weight: 700;
-  color: #ed2553;
+  font-weight: 500;
+  color: #267dff;
   margin-bottom: 15px;
   padding-left: 15px;
 `;
@@ -120,7 +120,7 @@ export const Login = () => {
     }
 
     if (username === dbUsername && password === dbPw) {
-      navigate("/home");
+      navigate("/loginafter");
     }
   };
   console.log(errors);
@@ -178,8 +178,8 @@ export const Login = () => {
           )}
           <Button
             cur={isValid ? "pointer" : "auto"}
-            bgcolor={isValid ? "#ed2553" : "white"}
-            fontcolor={isValid ? "white" : "#ed2553"}
+            bgcolor={isValid ? "#267dff" : "white"}
+            fontcolor={isValid ? "white" : "#267dff"}
           >
             로그인
           </Button>
