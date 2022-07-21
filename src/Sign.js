@@ -102,14 +102,18 @@ export const Sign = () => {
         </SigninTitle>
         <FormWrap>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <p>이름</p>
+            <p>아이디</p>
             <input
               type="text"
+              placeholder="영어+숫자 조합, 첫글자 숫자 X "
               {...register("username", {
                 required: true,
                 minLength: {
-                  value: 6,
-                  message: "아이디는 6자리 이상 필수입니다.",
+                  value: 1,
+                },
+                pattern: {
+                  value: /^[A-Za-z]{1}[A-Za-z0-9]{3,9}$/,
+                  message: "올바르지 않는 아이디 형식입니다.",
                 },
               })}
             />
@@ -119,11 +123,19 @@ export const Sign = () => {
             <p>비밀번호</p>{" "}
             <input
               type="password"
+              placeholder="최소 8자리, 
+
+              숫자,문자,특수문자 최소 1개"
               {...register("userpw", {
                 required: true,
                 minLength: {
                   value: 8,
-                  message: "비밀번호는 8자 이상 필수입니다.",
+                },
+
+                pattern: {
+                  value:
+                    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
+                  message: "올바르지 않는 비밀번호 형식입니다.",
                 },
               })}
             />
@@ -141,18 +153,17 @@ export const Sign = () => {
                 },
               })}
             />
-            <p>닉네임</p>{" "}
+            <p>이름</p>{" "}
             <input
               type="text"
               {...register("usernick", {
                 required: true,
                 minLength: {
-                  value: 3,
-                  message: "3글자 이상 입력해주세요.",
+                  value: 2,
                 },
                 pattern: {
-                  value: /^[A-za-z0-9가-힣]{3,10}$/,
-                  message: "가능한 문자: 영문 대소문자, 글자 단위 한글, 숫자",
+                  value: /^[가-힣]+$/,
+                  message: "이름은 한글로만 입력 가능합니다.",
                 },
               })}
             />
@@ -165,8 +176,11 @@ export const Sign = () => {
               {...register("useremail", {
                 required: true,
                 minLength: {
-                  value: 10,
-                  message: "Email은 필수 입력사항입니다.",
+                  value: 2,
+                },
+                pattern: {
+                  value: /^[a-z0-9\.\-_]+@([a-z0-9\-]+\.)+[a-z]{2,6}$/,
+                  message: "올바르지 않은 이메일 형식입니다.",
                 },
               })}
             />
@@ -179,13 +193,16 @@ export const Sign = () => {
               {...register("usertell", {
                 required: true,
                 minLength: {
-                  value: 9,
-                  message: "연락처는 필수 입력사항입니다.",
+                  value: 1,
+                },
+                pattern: {
+                  value: /^(010|011|016|017|018|019)-\d{3,4}-\d{4}$/u,
+                  message: "올바르지 않은 연락처 형식입니다.",
                 },
               })}
             />
             {errors?.usertell?.message && (
-              <ErrorMessage>{errors?.useretell?.message}</ErrorMessage>
+              <ErrorMessage>{errors?.usertell?.message}</ErrorMessage>
             )}
           </form>
         </FormWrap>
