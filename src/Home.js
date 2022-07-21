@@ -20,6 +20,7 @@ const LeftBox = styled.div`
   width: 25%;
   height: 60%;
   background-color: #267dff;
+  border-radius: 20px 0 0 20px;
 `;
 
 const HomeBox = styled.div`
@@ -33,6 +34,7 @@ const HomeBox = styled.div`
   align-items: center;
   color: #707070;
   z-index: 1;
+  border-radius: 0 20px 20px 0;
 `;
 
 const HomeTitle = styled.p`
