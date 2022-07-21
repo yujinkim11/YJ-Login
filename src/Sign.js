@@ -85,16 +85,15 @@ export const Sign = () => {
   });
 
   const onSubmit = () => {
-    const { username, userpw, checkpw, usernick, useremail, usertell } =
-      getValues();
+    const { userpw, checkpw } = getValues();
 
-    if (userpw == checkpw) {
+    if (userpw !== checkpw) {
       setError("pwResult", { message: "비밀번호가 일치하지 않습니다." });
     }
   };
 
   console.log(getValues());
-  console.log(isValid);
+  // console.log(isValid);
   return (
     <SigninAllWrap>
       <SigninBox>
@@ -150,6 +149,17 @@ export const Sign = () => {
                 required: true,
                 minLength: {
                   value: 8,
+                },
+                onChange() {
+                  const { userpw, checkpw } = getValues();
+
+                  if (userpw !== checkpw) {
+                    setError("pwResult", {
+                      message: "비밀번호가 일치하지 않습니다.",
+                    });
+                  } else {
+                    clearErrors("pwResult");
+                  }
                 },
               })}
             />
