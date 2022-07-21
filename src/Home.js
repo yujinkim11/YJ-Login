@@ -31,6 +31,8 @@ const HomeBox = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  justify-content: center;
   align-items: center;
   color: #707070;
   z-index: 1;
