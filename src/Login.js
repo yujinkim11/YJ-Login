@@ -101,7 +101,7 @@ export const Login = () => {
   const onSubmit = () => {
     const { username, password } = getValues();
     const { dbUsername, dbPw } = userDB;
-    console.log(getValues());
+    // console.log(getValues());
 
     if (username !== dbUsername) {
       setError("usernameResult", { message: "아이디를 다시 확인해주세요." });

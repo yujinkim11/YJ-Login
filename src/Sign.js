@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { get, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -84,10 +84,17 @@ export const Sign = () => {
     mode: "onChange",
   });
 
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    const { username, userpw, checkpw, usernick, useremail, usertell } =
+      getValues();
+
+    if (userpw == checkpw) {
+      setError("pwResult", { message: "비밀번호가 일치하지 않습니다." });
+    }
+  };
 
   console.log(getValues());
-
+  console.log(isValid);
   return (
     <SigninAllWrap>
       <SigninBox>
@@ -139,14 +146,16 @@ export const Sign = () => {
             <p>비밀번호 확인</p>
             <input
               type="password"
-              {...register("userpw2", {
+              {...register("checkpw", {
                 required: true,
                 minLength: {
                   value: 8,
-                  message: "비밀번호가 일치하지 않습니다.",
                 },
               })}
             />
+            {errors?.pwResult?.message && (
+              <ErrorMessage>{errors?.pwResult?.message}</ErrorMessage>
+            )}
             <p>이름</p>{" "}
             <input
               type="text"
