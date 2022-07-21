@@ -15,9 +15,14 @@ const LoginAllWrap = styled.div`
 `;
 
 const LeftBox = styled.div`
-  width: 30%;
+  width: 25%;
   height: 60vh;
-  background-color: #267dff;
+  background: linear-gradient(to bottom, #2f80ed, #56ccf2);
+  border-radius: 20px 0 0 20px;
+  h3 {
+    font-size: 35px;
+    color: white;
+  }
 `;
 
 const LoginBox = styled.div`
@@ -29,6 +34,7 @@ const LoginBox = styled.div`
   flex-direction: column;
   position: relative;
   color: #707070;
+  border-radius: 0 20px 20px 0;
   form {
     display: flex;
     flex-direction: column;
@@ -64,7 +70,7 @@ const Button = styled.button`
   font-weight: 700;
   cursor: ${(props) => props.cur};
   background-color: ${(props) => props.bgcolor};
-  transition: 0.7;
+  transition: 0.7s;
 `;
 
 const Signin = styled.p`
@@ -132,7 +138,10 @@ export const Login = () => {
   console.log(errors);
   return (
     <LoginAllWrap>
-      <LeftBox></LeftBox>
+      <LeftBox>
+        <h3>Welcome Back !</h3>
+        <p>To Keep Connected with us please login with your personal info.</p>
+      </LeftBox>
       <LoginBox>
         <LoginTitle>
           <p>LOGIN</p>
@@ -185,7 +194,7 @@ export const Login = () => {
           )}
           <Button
             cur={isValid ? "pointer" : "auto"}
-            bgcolor={isValid ? "#267dff" : "white"}
+            bgcolor={isValid ? "#2f80ed" : "white"}
             fontcolor={isValid ? "white" : "#267dff"}
           >
             로그인
