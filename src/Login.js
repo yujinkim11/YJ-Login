@@ -14,9 +14,15 @@ const LoginAllWrap = styled.div`
   align-items: center;
 `;
 
+const LeftBox = styled.div`
+  width: 30%;
+  height: 60vh;
+  background-color: #267dff;
+`;
+
 const LoginBox = styled.div`
-  max-width: 500px;
-  width: 100%;
+  width: 25%;
+  height: 60vh;
   background-color: white;
   padding: 80px 20px;
   display: flex;
@@ -126,6 +132,7 @@ export const Login = () => {
   console.log(errors);
   return (
     <LoginAllWrap>
+      <LeftBox></LeftBox>
       <LoginBox>
         <LoginTitle>
           <p>LOGIN</p>
