@@ -36,7 +36,7 @@ const SigninBox = styled.div`
     all: unset;
     border: 1px solid #dbdbdb;
     padding: 10px 18px;
-    margin: 10px 0;
+    margin: 20px 0 30px 0;
   }
 `;
 const FormWrap = styled.div`
@@ -66,7 +66,7 @@ const Button = styled.button`
 
 const ErrorMessage = styled.div`
   color: #ed2553;
-  margin: 0 0 20px 15px;
+  margin: -20px 0 20px 15px;
   font-size: 16px;
   font-weight: 700;
 `;
@@ -84,14 +84,8 @@ export const Sign = () => {
     mode: "onChange",
   });
 
-  const onSubmit = () => {
-    const { username, userpw, userpw2, usernick, useremail, usertell } =
-      getValues();
+  const onSubmit = () => {};
 
-    if (userpw !== userpw2) {
-      setError("userpwResult", { message: "비밀번호가 일치하지 않습니다." });
-    }
-  };
   console.log(getValues());
 
   return (
@@ -113,7 +107,7 @@ export const Sign = () => {
                 },
                 pattern: {
                   value: /^[A-Za-z]{1}[A-Za-z0-9]{3,9}$/,
-                  message: "올바르지 않는 아이디 형식입니다.",
+                  message: "올바르지 않은 아이디 형식입니다.",
                 },
               })}
             />
@@ -135,7 +129,7 @@ export const Sign = () => {
                 pattern: {
                   value:
                     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
-                  message: "올바르지 않는 비밀번호 형식입니다.",
+                  message: "올바르지 않은 비밀번호 형식입니다.",
                 },
               })}
             />
@@ -159,7 +153,7 @@ export const Sign = () => {
               {...register("usernick", {
                 required: true,
                 minLength: {
-                  value: 2,
+                  value: 1,
                 },
                 pattern: {
                   value: /^[가-힣]+$/,
@@ -173,6 +167,7 @@ export const Sign = () => {
             <p>이메일</p>{" "}
             <input
               type="email"
+              placeholder="yjlogin@mail.com"
               {...register("useremail", {
                 required: true,
                 minLength: {
@@ -190,6 +185,7 @@ export const Sign = () => {
             <p>연락처</p>
             <input
               type="tel"
+              placeholder="010-1234-5678"
               {...register("usertell", {
                 required: true,
                 minLength: {
