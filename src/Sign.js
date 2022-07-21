@@ -1,5 +1,5 @@
-import { get, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const SigninAllWrap = styled.div`
@@ -34,7 +34,7 @@ const SigninBox = styled.div`
   input {
     display: flex;
     all: unset;
-    border: 1px solid #dbdbdb;
+    border-bottom: 2px solid #dbdbdb;
     padding: 10px 18px;
     margin: 20px 0 30px 0;
   }
@@ -71,6 +71,24 @@ const ErrorMessage = styled.div`
   font-weight: 700;
 `;
 
+const Log = styled.div`
+  font-size: 16px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  a {
+    text-decoration: none;
+  }
+  span {
+    margin-left: 7px;
+    color: #ed2553;
+    :hover {
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+`;
+
 export const Sign = () => {
   const navigate = useNavigate();
   const {
@@ -85,15 +103,13 @@ export const Sign = () => {
   });
 
   const onSubmit = () => {
-    const { userpw, checkpw } = getValues();
-
-    if (userpw !== checkpw) {
-      setError("pwResult", { message: "비밀번호가 일치하지 않습니다." });
+    if (isValid == true) {
+      navigate("/login");
     }
   };
 
   console.log(getValues());
-  // console.log(isValid);
+  console.log(isValid);
   return (
     <SigninAllWrap>
       <SigninBox>
@@ -123,9 +139,7 @@ export const Sign = () => {
             <p>비밀번호</p>{" "}
             <input
               type="password"
-              placeholder="최소 8자리, 
-
-              숫자,문자,특수문자 최소 1개"
+              placeholder="최소 8자리 / 숫자, 문자, 특수문자 최소 1개"
               {...register("userpw", {
                 required: true,
                 minLength: {
@@ -219,15 +233,22 @@ export const Sign = () => {
             {errors?.usertell?.message && (
               <ErrorMessage>{errors?.usertell?.message}</ErrorMessage>
             )}
+            <Button
+              cur={isValid ? "pointer" : "auto"}
+              bgcolor={isValid ? "#ed2553" : "white"}
+              fontcolor={isValid ? "white" : "#ed2553"}
+            >
+              회원가입
+            </Button>
           </form>
         </FormWrap>
-        <Button
-          cur={isValid ? "pointer" : "auto"}
-          bgcolor={isValid ? "#ed2553" : "white"}
-          fontcolor={isValid ? "white" : "#ed2553"}
-        >
-          회원가입
-        </Button>
+
+        <Log>
+          <p>이미 계정이 있으신가요?</p>
+          <Link to="/Login">
+            <span>로그인</span>
+          </Link>
+        </Log>
       </SigninBox>
     </SigninAllWrap>
   );

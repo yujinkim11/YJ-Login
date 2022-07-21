@@ -23,4 +23,4 @@
 - [x] 필수사항 입력 시 가입 버튼
 - [x] 비밀번호, 비밀번호 확인 유효성 체크
 - [x] setError, clearErrors
-- [ ] useNavigate()
+- [x] useNavigate()

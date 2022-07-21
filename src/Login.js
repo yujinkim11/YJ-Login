@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const userDB = {
@@ -65,9 +65,17 @@ const Signin = styled.p`
   margin-top: 30px;
   text-align: center;
   color: #707070;
-  font-size: 15px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
+  a {
+    text-decoration: none;
+    color: #707070;
+    :hover {
+      font-weight: 700;
+      color: #ed2553;
+    }
+  }
   p {
     :nth-child(1) {
       margin-right: 20px;
@@ -177,7 +185,9 @@ export const Login = () => {
           </Button>
         </form>
         <Signin>
-          <p>회원가입하기</p>
+          <Link to="/Sign">
+            <p>회원가입하기</p>
+          </Link>
           <p>ID/PASSWORD 찾기</p>
         </Signin>
       </LoginBox>
