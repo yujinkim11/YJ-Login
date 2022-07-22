@@ -76,8 +76,11 @@ const SignupBox = styled.div`
     color: white;
   }
   :hover {
-    cursor: pointer;
-    border: 2px solid #267dff;
+    transition: 1s;
+    background-color: white;
+    p {
+      color: #2f80ed;
+    }
   }
 `;
 

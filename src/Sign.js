@@ -21,7 +21,7 @@ const SigninBox = styled.div`
   max-width: 500px;
   border-radius: 30px;
   width: 100%;
-  height: 90%;
+  height: 84%;
   background-color: white;
   padding: 80px 20px;
   display: flex;
