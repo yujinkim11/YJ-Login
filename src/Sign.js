@@ -19,6 +19,7 @@ const SigninTitle = styled.p`
 
 const SigninBox = styled.div`
   max-width: 500px;
+  border-radius: 30px;
   width: 100%;
   height: 90%;
   background-color: white;
