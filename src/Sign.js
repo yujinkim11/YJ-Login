@@ -52,6 +52,7 @@ const Button = styled.button`
   width: 100%;
   height: 50px;
   border: 2px solid #267dff;
+  border-radius: 30px;
   color: ${(props) => props.fontcolor};
   display: flex;
   justify-content: center;
