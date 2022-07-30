@@ -42,10 +42,10 @@ export const LoginAfter = () => {
   return (
     <LoginAfterWrap>
       <AfterBox>
-        <h3>로그인 완료!</h3>
+        <h3>👏로그인 완료👏</h3>
         <Link to="/login">
           <Go>
-            <p>홈으로</p>
+            <p>처음으로 돌아가기</p>
           </Go>
         </Link>
       </AfterBox>
