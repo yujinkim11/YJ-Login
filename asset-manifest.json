@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/yujinkim11.github.io/YJ-Login/static/js/main.8496c036.js",
-    "index.html": "/yujinkim11.github.io/YJ-Login/index.html",
-    "main.8496c036.js.map": "/yujinkim11.github.io/YJ-Login/static/js/main.8496c036.js.map"
+    "main.js": "/YJ-Login/static/js/main.ab12bc29.js",
+    "index.html": "/YJ-Login/index.html",
+    "main.ab12bc29.js.map": "/YJ-Login/static/js/main.ab12bc29.js.map"
   },
   "entrypoints": [
-    "static/js/main.8496c036.js"
+    "static/js/main.ab12bc29.js"
   ]
 }
