@@ -4,7 +4,7 @@
 
 ### 구현 모습
 
-<img src="https://user-images.githubusercontent.com/106130311/179666202-c7f31d87-1e74-448a-8908-76e45e011c4a.png" width="900px" height="500px">
+<img src="https://user-images.githubusercontent.com/106130311/183231908-a94f95f7-c1f9-48d6-9df0-d4444e091d28.png" width="900px" height="500px">
 
 ## 💡 주요 기능
 
