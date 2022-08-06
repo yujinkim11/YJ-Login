@@ -1,4 +1,42 @@
-# 💻 로그인 폼 구현
+# # 📌프로젝트명: YJ-Login
+
+로그인, 회원가입 창에서 유효성 검사를 구현한 사이트입니다.
+
+### 구현 모습
+
+<img src="https://user-images.githubusercontent.com/106130311/179666202-c7f31d87-1e74-448a-8908-76e45e011c4a.png" width="900px" height="500px">
+
+## 💡 주요 기능
+
+회원가입, 로그인 시 유효성 검사 (정규식 문법 사용)
+설정된 DB (ID: testid, pw: testpw)로 로그인 시 로그인 화면으로 이동
+
+- 추가하고 싶은 기능 : 유저가 로그인을 하면 DB이 되고 저장된 ID로 로그인 구현
+
+
+## 📅 제작 기간
+
+7/21 ~ 7/28 (약 1주 소요)
+
+
+## ✅ 기술요점
+
+- react를 사용하여 useForm 이용하여 구현
+- styled-components를 이용하여 스타일 지정
+- Nodejs 언어를 사용하여 npm 설치
+- setError, clearErrors, useNavigate() 작업
+- 반응형
+
+
+## 📝 사용언어
+
+-언어<br/>
+<img src="https://img.shields.io/badge/javascript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-orange?style=for-the-badge&logo=Node.js&logoColor=white">
+<br/> -프레임워크<br/>
+<img src="https://img.shields.io/badge/React-informational?style=for-the-badge&logo=React&logoColor=white">
+
+
 
 ## 📝 작업할 내용
 
