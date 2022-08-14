@@ -32,7 +32,7 @@
 
 -언어<br/>
 <img src="https://img.shields.io/badge/javascript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white">
-<img src="https://img.shields.io/badge/javascript-orange?style=for-the-badge&logo=Node.js&logoColor=white">
+<img src="https://img.shields.io/badge/Node.js-orange?style=for-the-badge&logo=Node.js&logoColor=white">
 <br/> -프레임워크<br/>
 <img src="https://img.shields.io/badge/React-informational?style=for-the-badge&logo=React&logoColor=white">
 
